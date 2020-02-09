@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Reponses
+     <!-- <a (click)="goToPage()" class="clickable">Request</a> -->
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tr>
+        <table class="table table-striped">
+          <tr>
+            <th>User</th><th>Environement</th><th>Activité</th><th>Préference</th>
+          </tr>
+          <tr *ngFor="let m of response">
+            <td>{{m.toString().split('#')[1].split(',')[0]}}</td>
+            <td>{{m.toString().split('#')[2].split(',')[0]}}</td>
+            <td>{{m.toString().split('#')[3].split(',')[0]}}</td>
+            <td>{{m.toString().split('#')[4].split(',')[0]}}</td>
+          </tr>
+        </table>
+        </tr>
+      </table>
+      <div>
+        <label *ngIf="reponseConflicts" style="color: red"><b>Conflit détécté:</b></label><br>
+        <label *ngIf="reponseConflicts">*cliquez sur le conflit pour avoir l'ACM qui le resout</label>
+
+
+        <div *ngFor="let c of reponseConflicts">
+            <!--<p > {{c}}</p> -->
+          <button type="text" style="color: red" (click)="onSubmit(c)"> {{c}} </button>
+         </div>
+        <div *ngIf="mode==2" style="color: green">
+        <label> Solution :</label>
+        <p>{{ACM}}<p>
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

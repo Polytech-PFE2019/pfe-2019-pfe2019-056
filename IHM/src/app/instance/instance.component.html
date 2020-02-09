@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Request
+      <!--  <a (click)="goToPage()" class="clickable">Upload file</a> -->
+    </div>
+
+    <div class="panel-body">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+      <div class="form-group">
+      <table class="table table-striped">
+        <tr>
+          <th>User</th><th>Environement</th><th>Activité</th>
+        </tr>
+        <tr>
+          <td>
+            <input class="form-control"  name="user" type="text" style="width:150px" [(ngModel)]="instance.user" />
+          </td>
+          <td>
+            <select [(ngModel)]="instance.Env"  name="Env">
+              <option></option>
+              <option> livingRoom</option>
+              <option> bedRoom </option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="instance.Act" name="Act">
+              <option></option>
+              <option> sleeping </option>
+              <option> reading </option>
+              <option> watching_movie </option>
+            </select>
+          </td>
+          <td>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+          </td>
+        </tr>
+      </table>
+      </div>
+      </form>
+      <div class="form-group" style="color: green">
+        {{reponse}}
+      </div>
+    </div>
+  </div>
+</div>
+
